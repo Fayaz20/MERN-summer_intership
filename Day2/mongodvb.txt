@@ -1,0 +1,48 @@
+Nosql:
+
+use admin
+switched to db admin
+db.admincollection.drop()
+true
+db.admincollection.find()
+db.admincollection.insertMany([
+  { Name: 'swift', Mode: 'DTS', Rented_user_count: 1, Milage: 20, Transmission: 'automatic', Rent: 2000, fuel: 'petrol', image_url: 'www.swift.com' },
+  { Name: 'corolla', Mode: 'Sedan', Rented_user_count: 3, Milage: 25, Transmission: 'automatic', Rent: 3000, fuel: 'petrol', image_url: 'www.corolla.com' },
+  { Name: 'camry', Mode: 'Sedan', Rented_user_count: 2, Milage: 18, Transmission: 'automatic', Rent: 3500, fuel: 'petrol', image_url: 'www.camry.com' },
+  { Name: 'honda', Mode: 'Civic', Rented_user_count: 4, Milage: 22, Transmission: 'manual', Rent: 2500, fuel: 'petrol', image_url: 'www.honda.com' },
+  { Name: 'ford', Mode: 'Mustang', Rented_user_count: 1, Milage: 15, Transmission: 'automatic', Rent: 4000, fuel: 'petrol', image_url: 'www.ford.com' },
+  { Name: 'bmw', Mode: 'X5', Rented_user_count: 2, Milage: 12, Transmission: 'automatic', Rent: 5000, fuel: 'diesel', image_url: 'www.bmw.com' },
+  { Name: 'audi', Mode: 'A4', Rented_user_count: 2, Milage: 20, Transmission: 'automatic', Rent: 4500, fuel: 'petrol', image_url: 'www.audi.com' },
+  { Name: 'mercedes', Mode: 'E-Class', Rented_user_count: 3, Milage: 19, Transmission: 'automatic', Rent: 5500, fuel: 'diesel', image_url: 'www.mercedes.com' },
+  { Name: 'volvo', Mode: 'XC60', Rented_user_count: 1, Milage: 17, Transmission: 'automatic', Rent: 3800, fuel: 'petrol', image_url: 'www.volvo.com' },
+  { Name: 'toyota', Mode: 'RAV4', Rented_user_count: 2, Milage: 23, Transmission: 'automatic', Rent: 3200, fuel: 'petrol', image_url: 'www.toyota.com' },
+  { Name: 'hyundai', Mode: 'Elantra', Rented_user_count: 3, Milage: 21, Transmission: 'automatic', Rent: 2800, fuel: 'petrol', image_url: 'www.hyundai.com' },
+  { Name: 'chevrolet', Mode: 'Cruze', Rented_user_count: 1, Milage: 24, Transmission: 'manual', Rent: 2700, fuel: 'petrol', image_url: 'www.chevrolet.com' },
+  { Name: 'nissan', Mode: 'Sentra', Rented_user_count: 2, Milage: 20, Transmission: 'automatic', Rent: 2900, fuel: 'petrol', image_url: 'www.nissan.com' },
+  { Name: 'kia', Mode: 'Sportage', Rented_user_count: 1, Milage: 18, Transmission: 'automatic', Rent: 3300, fuel: 'petrol', image_url: 'www.kia.com' },
+  { Name: 'subaru', Mode: 'Outback', Rented_user_count: 2, Milage: 19, Transmission: 'automatic', Rent: 3600, fuel: 'petrol', image_url: 'www.subaru.com' },
+  { Name: 'jaguar', Mode: 'F-Pace', Rented_user_count: 1, Milage: 16, Transmission: 'automatic', Rent: 6000, fuel: 'diesel', image_url: 'www.jaguar.com' },
+  { Name: 'land rover', Mode: 'Range Rover', Rented_user_count: 2, Milage: 13, Transmission: 'automatic', Rent: 7000, fuel: 'diesel', image_url: 'www.landrover.com' },
+  { Name: 'lexus', Mode: 'RX', Rented_user_count: 1, Milage: 14, Transmission: 'automatic', Rent: 4800, fuel: 'petrol', image_url: 'www.lexus.com' },
+  { Name: 'volkswagen', Mode: 'Golf', Rented_user_count: 3, Milage: 22, Transmission: 'automatic', Rent: 2600, fuel: 'petrol', image_url: 'www.volkswagen.com' },
+  { Name: 'mazda', Mode: 'CX-5', Rented_user_count: 2, Milage: 20, Transmission: 'automatic', Rent: 3100, fuel: 'petrol', image_url: 'www.mazda.com' }
+]);
+
+db.admincollection.find().sort({Name:1})
+db.admincollection.find().sort({Name:-1})
+db.admincollection.find().sort({Rented_user_count:1Name:-1})
+db.admincollection.find().forEach(function(send){db.getSiblingDB('test')['admincollection'].insert(send); })
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+use test
+switched to db test
+show collections
+admincollection
+db.admincollection.find()
+
+
+
+
+
+
+
+

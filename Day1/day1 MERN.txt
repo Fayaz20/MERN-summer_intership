@@ -1,0 +1,200 @@
+-- create a table
+CREATE TABLE students (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  gender TEXT NOT NULL
+);
+-- insert some values
+INSERT INTO students VALUES (1, 'Fayaz', 'M');
+INSERT INTO students VALUES (2, 'Akilan', 'M');
+INSERT INTO students VALUES (3, 'Anirudh', 'M');
+INSERT INTO students VALUES (4, 'Fardheen', 'M');
+INSERT INTO students VALUES (5, 'Arjun', 'M');
+INSERT INTO students VALUES (6, 'Jeeva', 'M');
+INSERT INTO students VALUES (7, 'Bharathan', 'M');
+INSERT INTO students VALUES (8, 'Deepak', 'M');
+INSERT INTO students VALUES (9, 'Dharsan', 'M');
+INSERT INTO students VALUES (10, 'Gokul', 'M');
+SELECT * FROM students;
+
+output:
+id	name	   gender
+1	Fayaz	      M
+2	Akilan	M
+3	Anirudh	M
+4	Fardheen	M
+5	Arjun	      M
+6	Jeeva	      M
+7	Bharathan	M
+8	Deepak	M
+9	Dharsan	M
+10	Gokul  	M
+
+ALTER TABLE students ADD age INTEGER;
+update students set age=20 where id=1;
+update students set age=19 where id=2;
+update students set age=20 where id=3;
+update students set age=19 where id=4;
+update students set age=18 where id=5;
+update students set age=19 where id=6;
+update students set age=19 where id=7;
+update students set age=19 where id=8;
+update students set age=20 where id=9;
+update students set age=19 where id=10;
+SELECT * FROM students;
+
+output:
+id	name	   gender	     age
+1	Fayaz	      M	     20
+2	Akilan	M	     19
+3	Anirudh	M	     20
+4	Fardheen	M	     19
+5	Arjun	      M	     18
+6	Jeeva 	M	     19
+7	Bharathan	M	     19
+8	Deepak	M	     19
+9	Dharsan	M	     20
+10	Gokul 	M	     19
+
+ALTER TABLE students drop column gender;
+SELECT * FROM students;
+
+output:
+id	name	     age
+1	Fayaz	      20
+2	Akilan	19
+3	Anirudh	20
+4	Fardheen	19
+5	Arjun	      18
+6	Jeeva	      19
+7	Bharathan	19
+8	Deepak	19
+9	Dharsan	20
+10	Gokul	      19
+
+SELECT * FROM students where age=20;
+SELECT * FROM students order by name;
+SELECT age,count(*) as count FROM students group by age;
+
+output:
+id	name	     age     
+1	Fayaz	      20
+3	Anirudh	20
+9	Dharsan	20
+
+
+id	name	      age
+2	Akilan	19
+3	Anirudh	20
+5	Arjun	      18
+7	Bharathan	19
+8	Deepak	19
+9	Dharsan	20
+4	Fardheen	19
+1	Fayaz	      20
+10	Gokul       19
+6	Jeeva	      19
+
+age	count
+20	3
+19	6
+18	1
+
+CREATE TABLE courses(
+  id INTEGER PRIMARY KEY,
+  course_name TEXT NOT NULL,
+  faculty TEXT NOT NULL
+);
+INSERT INTO courses VALUES (1, 'Biology', 'Aa');
+INSERT INTO courses VALUES (2, 'Maths', 'Bb');
+INSERT INTO courses VALUES (3, 'English', 'Cc');
+INSERT INTO courses VALUES (4, 'History', 'Dd');
+INSERT INTO courses VALUES (5, 'Maths', 'Ee');
+INSERT INTO courses VALUES (6, 'Biology', 'Ff');
+INSERT INTO courses VALUES (7, 'English', 'Gg');
+INSERT INTO courses VALUES (8, 'History', 'Hh');
+INSERT INTO courses VALUES (9, 'Geo', 'Ii');
+INSERT INTO courses VALUES (10, 'English', 'Jj');
+SELECT * FROM courses;
+
+output:
+id	course_name	 faculty
+1	Biology	   Aa
+2	Maths	         Bb
+3	English	   Cc
+4	History	   Dd
+5	Maths	         Ee
+6	Biology	   Ff
+7	English	   Gg
+8	History	   Hh
+9	Geo	         Ii
+10	English	   Jj
+
+JOINS:
+ Inner Join:
+SELECT courses.course_name,students.name,courses.faculty 
+FROM courses inner join students on courses.id=students.id;
+
+output:
+course_name	 name	 faculty
+Biology	Fayaz	    Aa
+Maths	      Akilan    Bb
+English	Anirudh   Cc
+History	Fardheen  Dd
+Maths	      Arjun	    Ee
+Biology	Jeeva	    Ff
+English	Bharathan Gg
+History	Deepak    Hh
+Geo	      Dharsan   Ii
+English	Gokul	    Jj
+
+ Left Join:
+ SELECT * FROM courses left join students on courses.id=students.id;
+
+ output:
+
+ id	course_name	faculty	id	name	     age
+1	Biology	Aa	      1	Fayaz	      20
+2	Maths	      Bb	      2	Akilan	19
+3	English	Cc	      3	Anirudh	20
+4	History	Dd	      4	Fardheen	19
+5	Maths	      Ee	      5	Arjun	      18
+6	Biology	Ff	      6	Jeeva	      19
+7	English	Gg	      7	Bharathan	19
+8	History	Hh	      8	Deepak	19
+9	Geo	      Ii	      9	Dharsan	20
+10	English	Jj	      10	Gokul	      19
+ 
+ Right Join:
+ SELECT * FROM courses right join students on courses.id=students.id;
+
+ output:
+  
+  id	course_name	faculty	id	name	     age
+1	Biology	Aa	      1	Fayaz	      20
+2	Maths	      Bb	      2	Akilan	19
+3	English	Cc	      3	Anirudh	20
+4	History	Dd	      4	Fardheen	19
+5	Maths	      Ee	      5	Arjun	      18
+6	Biology	Ff	      6	Jeeva	      19
+7	English	Gg	      7	Bharathan	19
+8	History	Hh	      8	Deepak	19
+9	Geo	      Ii	      9	Dharsan	20
+10	English	Jj	      10	Gokul	      19
+ 
+SELECT sum(age) as sum  FROM students where age=20;
+ 
+output:
+
+sum
+60
+
+ SELECT avg(age) as average  FROM students;
+ 
+ output:
+ average
+ 19.2000
+  
+
+ 
+

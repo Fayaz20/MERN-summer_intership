@@ -1,0 +1,110 @@
+JS notes:
+
+*let and const are ES6 features introduced in 2016,var is before 2016.
+
+*var can be used to declare and reassign it is one of the backup,other
+ langages throws error.
+
+*var does not include block scope.
+
+*hosting-in js when ever the variable is declared with var keyword it will be moved to top only for declartion but initialization takes palce at specified line.
+
+*but let allows.
+
+var x=100;
+{
+    var x=20;
+    console.log(x);
+}
+console.log(x);
+
+output:20
+       20
+
+
+
+Data types:
+           
+   number type include: int,float,infinity(1/0),-infinity,Nan(not a number)
+   
+   *more than 2^53 convert to big int.
+ 
+   *String:backtick introduced after ES6 is used for indentation;
+   
+   *NULL it is defined by giving value null.
+
+   *undefined: if the container is empty.
+  
+   *Boolean it used to define values true or false.
+
+   *Object it is used to keep a collection of data.
+
+     1.mutation is only usable in object.
+       spread operater is used to take a copy of one object and place in another object.
+
+
+Function:
+  function is used to increase code reusablity.
+   syntax: fuction fun_name(para1,para2){}
+
+ == check only value;
+ === check both value and data type;
+
+arrow function
+immediate invoking
+
+Output:
+10n
+index.js:3 bigint
+index.js:8 Addition of two numbers 21265 and 20 is equal to 2126520
+index.js:9 Addition of two
+numbers 21265 and
+20 is 2126520
+index.js:13 null
+index.js:15 undefined
+index.js:26 19
+index.js:27 {name: 'Akilan', id: 20, college: 'sece', age: 19, address: 'qsxuvbu'}
+index.js:45 (5) ['name', 'id', 'college', 'age', 'address']
+index.js:46 (5) ['Akilan', 20, 'sece', 19, 'qsxuvbu']
+index.js:47 (5) ['name', 'id', 'college', 'age', 'address']
+index.js:53 {name: 'fayaz', id: 20, college: 'sece', age: 30, address: 'qsxuvbu'} {name: 'Akilan', id: 20, college: 'sece', age: 19, address: 'qsxuvbu'}
+index.js:62 undefined
+index.js:63 undefined
+index.js:65 name Akilan
+index.js:65 id 20
+index.js:65 college sece
+index.js:65 age 19
+index.js:65 address qsxuvbu
+index.js:74 invalid number
+index.js:84 invalid number
+index.js:94 30
+index.js:95 -10
+index.js:96 200
+index.js:97 0.5
+index.js:101 im studying at sece
+index.js:102   im studying at sece  
+index.js:103   im studying at soce  
+index.js:104   im studying at sece  
+index.js:105   im studying at soco  
+index.js:106   im studying at sece  
+index.js:109 (7) [1, 2, 3, '1234', '4', 60.25, 10]
+index.js:111 (6) [1, 2, 3, '1234', '4', 60.25]
+index.js:113 (7) [12, 1, 2, 3, '1234', '4', 60.25]
+index.js:115 (6) [1, 2, 3, '1234', '4', 60.25]
+index.js:117 (7) [1, 2, 3, '1234', '4', 60.25, ƒ]
+index.js:118 300
+index.js:119 (7) [1, 2, 3, '1234', '4', 60.25, ƒ]
+index.js:121 (8) [1, 2, 3, '1234', '4', 60.25, ƒ, {…}]
+index.js:122 hello
+index.js:124 (11) [1, 2, 3, '1234', '4', 60.25, 'A', 'B', 'C', ƒ, {…}]
+index.js:126 (14) ['a', 1, 2, 3, '1234', '4', 60.25, 'A', 'B', 'C', ƒ, {…}, 'b', 'c']
+index.js:129 (5) ['anirudh', 'akilan', 'Fardeen', 'Jeeva', 'asvin'] (3) ['akilan', 'Fardeen', 'Jeeva']
+index.js:131 (8) ['Surya', 'anirudh', 'akilan', 'Fardeen', 'Jeeva', 'asvin', 'Chandra', 'Fayaz']
+index.js:133 arish
+index.js:136 sri eshwar college (3) ['sri', 'eshwar', 'college']
+index.js:137 srieshwarcollege
+index.js:138 SRIESHWARCOLLEGE
+index.js:139 srieshwarcollege
+index.js:140 SRI ESHWAR COLLEGE
+index.js:141 sri eshwar college
+index.js:149 Madhu Akshya Priya Ishwarya Saranya

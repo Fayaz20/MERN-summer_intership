@@ -1,4 +1,4 @@
-function palindrome(string)
+/*function palindrome(string)
 {
    for(var i=0;i<=string.length/2;i++)
    {
@@ -201,4 +201,12 @@ const apiCall=async()=>{
         console.log('error')
     }
 }
-apiCall();
+apiCall();*/
+
+import { user_data,addUser,deleteUser,editMultipleUser,editUser } from "./useModule.js";
+addUser({id:2,name:'akilan',age:20,email:"djkq25jzak@jkds.com"},{id:3,name:'ani',age:18,email:"425q25jzak@jkds.com"})
+editUser(1,'age',12)
+console.log(user_data)
+editMultipleUser()
+deleteUser(3)
+document.body.innerText='hello'

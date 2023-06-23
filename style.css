@@ -1,0 +1,18 @@
+.h1{
+    color:rgb(30, 255, 0);
+    text-align: center;
+    font-size: 35px;
+    font-family: fantasy;
+    font-style:italic;
+    border-width:2px;
+    border-style:solid;
+    border-color:red;
+}
+.ma{
+    width: auto;
+    height: auto;
+    display: block;
+    text-align:center;
+    margin-left:auto;
+    margin-right: auto;
+}
